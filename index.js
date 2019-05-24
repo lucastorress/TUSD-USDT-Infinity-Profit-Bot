@@ -22,8 +22,8 @@ setInterval(function () {
                 buy = 0.9920;
                 sell = 0.9965;
             } else {
-                buy = 0. 9980;
-                sell = 1. 0020;
+                buy = 0.9980;
+                sell = 1.0020;
             }
             console.log("Entre achat " + buy + " et vente " + sell);
             if (balances.USDT.available > 20) {
