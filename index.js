@@ -6,6 +6,7 @@ const binance = require('node-binance-api')().options({
 });
 
 setInterval(function () {
+    try{
     binance.balance((error, balances) => {
         if (error) return console.error(error);
         const total = parseFloat(balances.USDT.onOrder) + parseFloat(balances.USDT.available) + parseFloat(balances.TUSD.onOrder) + parseFloat(balances.TUSD.available)
@@ -22,8 +23,8 @@ setInterval(function () {
                 buy = 0.9920;
                 sell = 0.9965;
             } else {
-                buy = 0.9980;
-                sell = 1.0020;
+                buy = 0, 9980;
+                sell = 1, 0020;
             }
             console.log("Entre achat " + buy + " et vente " + sell);
             if (balances.USDT.available > 20) {
@@ -36,4 +37,7 @@ setInterval(function () {
             }
         });
     });
+    }catch($e){
+        console.log("Une erreur est survenue : "+$e);
+    }
 }, 3000)
