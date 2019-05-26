@@ -28,7 +28,7 @@ Ainda na pasta do Bot
 npm start
 ```
 
-Seja pasciente e espere seu saldo em TUSD e USDT aumentar.
+Seja paciente e espere seu saldo em TUSD e USDT aumentar.
 
 ## Nota
 O bot pode parar repentinamente, isso alguém deve pensar em alguma solução.
