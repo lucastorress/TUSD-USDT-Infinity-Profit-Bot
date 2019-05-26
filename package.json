@@ -1,12 +1,12 @@
 {
-  "name": "usdbot",
+  "name": "tusdusdtbot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "make infinity money with tusd and usdt",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js"
   },
-  "author": "",
+  "author": "itxtoledo",
   "license": "ISC",
   "dependencies": {
     "node-binance-api": "^0.9.1"
