@@ -14,16 +14,13 @@ setInterval(function () {
         console.clear();
         console.log("==========================================");
         console.log("SALDO TOTAL..:", total, "USD")
-        console.log("SALDO INCIIAL:", config.INITIAL_INVESTMENT, "USD")
+        console.log("SALDO INICIAL:", config.INITIAL_INVESTMENT, "USD")
         console.log("LUCRO........:", total - config.INITIAL_INVESTMENT, "USD")
         dateAtual = new Date();
         console.log("@", dateAtual.getHours() + ':' + dateAtual.getMinutes() + ':' + dateAtual.getSeconds());
         console.log("==========================================");
         var buy = 0.9985;
         var sell = 1.0030;
-        binance.prices((error, ticker) => {
-            console.log("Cotação BTCUSDT", ticker.BTCUSDT);
-        });
         binance.prevDay("BTCUSDT", (error, prevDay, symbol) => {
             if (prevDay.priceChangePercent > 0) {
                 buy = 0.9920;
@@ -32,7 +29,8 @@ setInterval(function () {
                 buy = 0.9980;
                 sell = 1.0020;
             }
-            console.log("Entre compra " + buy + " e venda " + sell);
+            console.log("Cotação BTCUSDT", prevDay.lastPrice);
+            console.log("Definidos: compra " + buy + " e venda " + sell);
             if (balances.USDT.available > 20) {
                 console.log("Compra: " + buy);
                 binance.buy("TUSDUSDT", ((balances.USDT.available - 0.1) / buy).toFixed(2), buy);
@@ -43,7 +41,7 @@ setInterval(function () {
             }
         });
     });
-    }catch($e){
-        console.log("ERRO : "+$e);
+    }catch(e){
+        console.log("ERRO : "+e);
     }
 }, 10000)
