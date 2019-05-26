@@ -1,5 +1,5 @@
-const config = require('./config')
-const binance = require('node-binance-api')().options({
+var config = require('./config.json')
+var binance = require('node-binance-api')().options({
     APIKEY: config.API_KEY,
     APISECRET: config.SECRET_KEY,
     useServerTime: true
