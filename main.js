@@ -19,8 +19,8 @@ setInterval(function () {
             dateAtual = new Date();
             console.log("@", dateAtual.getHours() + ':' + dateAtual.getMinutes() + ':' + dateAtual.getSeconds());
             console.log("==========================================");
-            var buy = 0.9985;
-            var sell = 1.0030;
+            var buy = config.BUY_PRICE;
+            var sell = config.SELL_PRICE;
             try {
                 binance.prevDay("BTCUSDT", (error, prevDay, symbol) => {
                     if (prevDay.priceChangePercent > 0) {
