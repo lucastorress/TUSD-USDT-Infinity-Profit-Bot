@@ -1,4 +1,4 @@
-# TUSD-USDT Infinity Profit
+# TUSD-USDT Infinity Profit Bot
 
 ## Funcionamento
 
